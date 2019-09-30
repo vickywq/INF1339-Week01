@@ -41,12 +41,12 @@
              if (binary[3] =='1') {z = true}
             // "compute" the value of logical expression for each segment
              var a =!w&x&z || w&!x&!y || !x&!y&!z || !w&y // set them to the initial default originally
-             var b = false
-             var c = false
-             var d = false
-             var e = false
-             var f = false
-             var g = false
+             var b = !w&!x || !w&x&!y&!z  || !w&x&y&z || w&!x&!y
+             var c = !x&!y || !w&!x&y&z || !w&x&!y&!z ||  !w&x&!y&z ||  !w&x&y
+             var d = !w&!x&!z || !w&!x&y&z || !w&x&!y&z || !w&x&y&!z || w&!x&!y
+             var e = !x&!y&!z || !w&y&!z
+             var f = !w&x || w&!x&!y || !x&!w&!y&!z
+             var g = !w&!x&y || !w&x&!y || !w&x&y&!z || w&!x&!y 
              //assemble andreturn the output
              //we will build up the output sring element by element
               var output = ''
